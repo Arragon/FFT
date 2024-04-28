@@ -45,10 +45,8 @@ PROGRAM ComputeFFT
         IF(f > (fen*1.e+9)) EXIT
         IF((f >= (fst*1.e+9)).and.(f <= (fen*1.e+9))) THEN
             write(*,*) f
-            !pause
             WRITE(10,*)f*1.e-9,",",CABS(four1(x))/MAXVAL(data2)
             print *, x*df, CABS(four1(x)), MAXVAL(data2)
-            !pause
         ENDIF
         x=x+1
     ENDDO
