@@ -1,5 +1,11 @@
 PROGRAM ComputeFFT
     IMPLICIT NONE
+    !INTERFACE
+    !    SUBROUTINE fft(a,n,inv)
+    !        COMPLEX,DIMENSION(:) :: a
+    !        INTEGER,INTENT(IN) :: n,inv
+    !    ENDSUBROUTINE fft
+    !ENDINTERFACE
 
     INTEGER :: count = 0
     INTEGER :: Maxm = 32768
@@ -14,6 +20,7 @@ PROGRAM ComputeFFT
     OPEN(1,file="D:\Files\qfdtd90_test\qfdtd_ader_forward_difference\qfdtd90_new\es.csv")
     DO
         READ(1,*,IOSTAT=ios) ii,data_read
+        !write(*,*) II,data_read
         IF(ios /= 0) EXIT
         data1(count) = data_read
         four1(count) = data1(count)
